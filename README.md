@@ -1,4 +1,58 @@
-# bioinformatic-security-suite
+# Bioinformatic Security Suite
+
+This security suite is designed to protect bioinformatic systems from malicious attacks. It provides a user-friendly interface for managing users, monitoring system activity, and implementing security controls.
+
+## Getting Started
+
+### Prerequisites
+
+- Docker
+- Python 3.8
+- Node.js
+
+### Installation
+
+1. Clone the repository
+```
+git clone https://github.com/<username>/bioinformatic-security-suite.git
+```
+2. Install the microservices
+```
+cd bioinformatic-security-suite/microservices/edge-service
+pip install -r requirements.txt
+
+cd ../cloud-service
+pip install -r requirements.txt
+```
+3. Install webgui dependencies
+```
+cd ../../webgui
+npm install
+```
+4. Run the webgui
+```
+npm start
+```
+
+## Usage
+
+1. Register a new user through the webgui
+2. Log in with the new user
+3. Manage users and security settings through the webgui
+
+## Contributing
+
+We welcome contributions from the community. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to submit contributions.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+- [OpenAI](https://openai.com/) for providing the language model.
+
+
 
 ```
 bioinformatic-security-suite
