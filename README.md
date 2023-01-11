@@ -22,18 +22,24 @@ bioinformatic-security-suite
 │   │   ├── edge-service.py
 │   │   ├── edge-service_test.py
 │   │   ├── requirements.txt
-│   │   └── Dockerfile
+│   │   └── deployment.yaml
 │   └── cloud-service
 │       ├── cloud-service.py
 │       ├── cloud-service_test.py
 │       ├── requirements.txt
-│       └── Dockerfile
+│       └── deployment.yaml
 ├── webgui
 │   ├── index.html
 │   ├── style.css
 │   ├── app.js
 │   ├── login.js
-│   └── webgui_test.js
+│   ├── webgui_test.js
+│   └── deployment.yaml
+├── k8s
+│   ├── cluster-config
+│   ├── istio-config
+│   ├── kustomization.yaml
+│   └── cert-manager-config
 └── infra
     ├── terraform
     │   ├── main.tf
