@@ -1,0 +1,6 @@
+---
+bioinfo_image: bioinfo:latest
+bioinfo_port: 5000
+db_host: database.example.com
+db_user: bioinfo
+db_password: securepassword

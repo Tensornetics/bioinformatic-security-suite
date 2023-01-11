@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage("Build and Test") {
+            steps {
+                sh 'make test'
+            }
+        }
+        stage("Deploy to Edge Service") {
+            steps {
+                sh 'kubectl apply -f microservices/edge-service/deployment.yaml'
+            }
+        }
+        stage("Deploy to Cloud Service") {
+            steps {
+                sh 'kubectl apply -f microservices/cloud-service/deployment.yaml'
+            }
+        }
+        stage("Deploy to Webgui") {
+            steps {
+                sh 'kubectl apply -f webgui/deployment.yaml'
+            }
+        }
+    }
+    post {
+        success {
+            slackSend color: 'good', message: "Deployment of bioinformatic security suite was successful!"
+        }
+        failure {
+            slackSend color: 'danger', message: "Deployment of bioinformatic security suite failed! Please check the logs."
+        }
+    }
+}

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bioinformatic-security-suite-webgui
+spec:
+  selector:
+    matchLabels:
+      app: bioinformatic-security-suite-webgui
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: bioinformatic-security-suite-webgui
+    spec:
+      containers:
+      - name: webgui
+        image: bioinformaticsecuritysuite/webgui:latest
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        env:
+        - name: ENV_VAR_1
+          value: "value1"
+        - name: ENV_VAR_2
+          value: "value2"
+        resources:
+          limits:
+            cpu: "1"
+            memory: 500Mi
+          requests:
+            cpu: 250m
+            memory: 100Mi

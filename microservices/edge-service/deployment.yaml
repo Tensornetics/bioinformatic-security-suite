@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bioinformatic-security-suite-edge-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bioinformatic-security-suite-edge-service
+  template:
+    metadata:
+      labels:
+        app: bioinformatic-security-suite-edge-service
+    spec:
+      containers:
+      - name: edge-service
+        image: bioinformatic-security-suite/edge-service:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: FOO
+          value: "bar"
