@@ -1,0 +1,21 @@
+language: python
+python:
+  - "3.8"
+services:
+  - docker
+before_install:
+  - docker pull hyperledger/fabric-tools:latest
+  - pip install --upgrade pip
+  - pip install -r microservices/edge-service/requirements.txt
+  - pip install -r microservices/cloud-service/requirements.txt
+  - pip install -r webgui/requirements.txt
+script:
+  - cd microservices/edge-service
+  - pytest
+  - cd ../cloud-service
+  - pytest
+  - cd ../../webgui
+  - npm test
+  - cd ../infra
+  - terraform validate
+  - ansible-playbook -i inventory/dev playbook.yml --check
