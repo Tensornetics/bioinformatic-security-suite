@@ -1,0 +1,23 @@
+pipeline {
+    agent {
+        label 'ubuntu'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'docker pull hyperledger/fabric-tools:latest'
+                sh 'pip install -r microservices/edge-service/requirements.txt'
+                sh 'pip install -r microservices/cloud-service/requirements.txt'
+                sh 'pip install -r webgui/requirements.txt'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'cd microservices/edge-service && pytest'
+                sh 'cd microservices/cloud-service && pytest'
+                sh 'cd webgui && npm test'
+                sh 'cd infra && terraform validate && ansible-playbook -i inventory/dev playbook.yml --check'
+            }
+        }
+    }
+}

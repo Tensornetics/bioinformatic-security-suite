@@ -1,0 +1,23 @@
+---
+- name: Deploy bioinformatic security suite
+  hosts: all
+  vars:
+    webgui_port: 80
+  tasks:
+  - name: Install Docker
+    become: yes
+    apt:
+      name: docker.io
+      state: present
+
+  - name: Start the edge service
+    become: yes
+    command: docker-compose -f microservices/edge-service/docker-compose.yml up -d
+
+  - name: Start the cloud service
+    become: yes
+    command: docker-compose -f microservices/cloud-service/docker-compose.yml up -d
+
+  - name: Start the web gui
+    become: yes
+    command: cd webgui && npm start -- --port {{ webgui_port }}

@@ -1,0 +1,20 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "PeerAuthentication"
+metadata:
+  name: "default"
+  namespace: "bioinformatic-security-suite"
+spec:
+  mtls:
+    mode: STRICT
+
+---
+apiVersion: "networking.istio.io/v1alpha3"
+kind: "DestinationRule"
+metadata:
+  name: "bioinformatic-security-suite-destination"
+  namespace: "bioinformatic-security-suite"
+spec:
+  host: "*.bioinformatic-security-suite.com"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
