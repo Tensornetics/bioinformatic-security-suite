@@ -14,7 +14,7 @@ This security suite is designed to protect bioinformatic systems from malicious 
 
 1. Clone the repository
 ```
-git clone https://github.com/<username>/bioinformatic-security-suite.git
+git clone https://github.com/Tensornetics/bioinformatic-security-suite.git
 ```
 2. Install the microservices
 ```
