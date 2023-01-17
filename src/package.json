@@ -1,0 +1,25 @@
+{
+  "name": "tensornetics-decentralized-ledger",
+  "version": "1.0.0",
+  "description": "A decentralized ledger built using JavaScript",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "ws": "^7.3.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.2"
+  },
+  "keywords": [
+    "blockchain",
+    "decentralized",
+    "ledger",
+    "javascript"
+  ],
+  "author": "Tensornetics Team",
+  "license": "MIT"
+}
