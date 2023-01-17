@@ -1,0 +1,29 @@
+installation-guides/
+├── cloud-setup/
+│   ├── aws-setup.md
+│   ├── azure-setup.md
+│   └── gcloud-setup.md
+├── deployment/
+│   ├── deployment.md
+│   └── k8s-resources.md
+├── configuration/
+│   ├── config.md
+│   ├── biometric-authentication.md
+│   └── web-gui.md
+├── finalizing-setup/
+│   ├── testing.md
+│   └── verification.md
+├── security-best-practices/
+│   ├── security.md
+│   └── encryption.md
+├── compliance/
+│   ├── regulatory-compliance.md
+│   └── compliance-checklist.md
+├── monitoring-troubleshooting/
+│   ├── monitoring.md
+│   ├── troubleshooting.md
+│   ├── incident-response.md
+│   └── log-review.md
+└── backup-disaster-recovery/
+    ├── backup.md
+    └── disaster-recovery.md
