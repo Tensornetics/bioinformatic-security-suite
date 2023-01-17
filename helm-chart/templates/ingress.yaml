@@ -1,0 +1,64 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}-ingress
+  labels:
+    app: {{ .Chart.Name }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - path: /webgui
+        pathType: Prefix
+        path: /webgui
+        pathType: Prefix
+        path: /api
+        pathType: Prefix
+        path: /biometric_authentication
+        pathType: Prefix
+        path: /regulatory_compliance
+        pathType: Prefix
+        path: /security_best_practices
+        pathType: Prefix
+        path: /troubleshooting
+        pathType: Prefix
+        path: /usage
+        pathType: Prefix
+        path: /installation
+        pathType:
+        backend:
+          service:
+            name: {{ .Chart.Name }}-webgui-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-api-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-biometric_authentication-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-regulatory_compliance-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-security_best_practices-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-troubleshooting-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-usage-svc
+            port:
+              name: http
+          service:
+            name: {{ .Chart.Name }}-installation-svc
+            port:
+              name: http
