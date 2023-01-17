@@ -1,0 +1,17 @@
+apiVersion: v2
+name: bioinformatic-security-suite
+version: 0.1.0
+appVersion: 1.0.0
+description: A security suite for bioinformatic workloads
+maintainers:
+  - name: Tensornetics Team
+    email: admin@tensornetics.com
+home: https://github.com/Tensornetics/bioinformatic-security-suite
+icon: https://raw.githubusercontent.com/Tensornetics/bioinformatic-security-suite/master/docs/images/logo.png
+sources:
+  - https://github.com/Tensornetics/bioinformatic-security-suite
+dependencies:
+  - name: nginx-ingress
+    version: 1.5.0
+  - name: cert-manager
+    version: 1.0.1
