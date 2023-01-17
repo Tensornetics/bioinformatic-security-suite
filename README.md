@@ -99,6 +99,16 @@ bioinformatic-security-suite
 │   ├── kustomization.yaml
 │   ├── cert-manager-config
 │   └── monitoring_logging.yaml (added to monitor and log the k8s resources)
+└── helm-chart (added directory for the Helm chart)
+│   ├── Chart.yaml
+│   ├── values.yaml
+│   ├── templates
+│   │   ├── deployment.yaml
+│   │   ├── service.yaml
+│   │   └── ingress.yaml
+│   ├── charts
+│   ├── templates_test (added directory for testing templates)
+│   ├── Chart.lock
 └── infra
     ├── terraform
     │   ├── main.tf
