@@ -1,0 +1,33 @@
+# Ignoring the following files and directories
+# These files are not required in the Docker image
+
+# Git files
+.git
+.gitignore
+
+# Ignore virtual environment
+.venv
+
+# Log files
+*.log
+
+# Ignore test files and directories
+__pycache__
+*.pyc
+*.pyo
+tests/
+*.test
+
+# Ignore CI/CD files
+.travis.yml
+Jenkinsfile*
+.dockerignore
+
+# Ignore infrastructure provisioning files
+infra/
+
+# Ignore chaincode files
+chaincode/
+
+# Ignore kubernetes files
+k8s/
