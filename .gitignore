@@ -1,0 +1,48 @@
+# Build artifacts
+dist/
+build/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Terraform files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Ansible files
+ansible.retry
+
+# Kubernetes and ISTIO files
+*.kubeconfig
+*.istio.yaml
+
+# Node modules
+node_modules/
+
+# CI/CD files
+*.log
+*.junit.xml
+*.xml
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.iso
+*.img
+*.box
+*.deb
+*.rpm
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio Code
+.vscode/
+*.log
+*.pid
