@@ -59,72 +59,105 @@ bioinformatic-security-suite
 ├── README.md
 ├── LICENSE
 ├── docs
-│ ├── architecture.md
-│ ├── design.md
-│ ├── installation.md
-│ ├── usage.md
-│ ├── troubleshooting.md
-│ ├── security_best_practices.md
-│ ├── biometric_authentication.md
-│ └── regulatory_compliance.md
+│   ├── architecture.md
+│   ├── design.md
+│   ├── installation.md
+│   ├── usage.md
+│   ├── troubleshooting.md
+│   ├── security_best_practices.md
+│   ├── biometric_authentication.md
+│   ├── regulatory_compliance.md
+│   ├── risk_management.md
+│   ├── attck_integration.md
+│   └── d3fend_integration.md
 ├── chaincode
-│ ├── chaincode.go
-│ ├── chaincode_test.go (added to test the chaincode)
-│ ├── fabcar.go
-│ ├── fabcar_test.go (added to test the fabcar code)
-│ ├── metadata.go
-│ └── metadata_test.go (added to test the metadata code)
+│   ├── chaincode.go
+│   ├── chaincode_test.go (added to test the chaincode)
+│   ├── fabcar.go
+│   ├── fabcar_test.go (added to test the fabcar code)
+│   ├── metadata.go
+│   └── metadata_test.go (added to test the metadata code)
 ├── microservices
-│ ├── edge-service
-│ │ ├── edge-service.go
-│ │ ├── edge-service_test.go (added to test the edge-service code)
-│ │ └── deployment.yaml
-│ └── cloud-service
-│ ├── cloud-service.go
-│ ├── cloud-service_test.go (added to test the cloud-service code)
-│ └── deployment.yaml
+│   ├── edge-service
+│   │   ├── edge-service.go
+│   │   ├── edge-service_test.go (added to test the edge-service code)
+│   │   └── deployment.yaml
+│   └── cloud-service
+│       ├── cloud-service.go
+│       ├── cloud-service_test.go (added to test the cloud-service code)
+│       └── deployment.yaml
 ├── webgui
-│ ├── index.html
-│ ├── style.css
-│ ├── app.js
-│ ├── login.js
-│ ├── webgui_test.js (added to test the webgui code)
-│ ├── biometric_authentication.js (added for the biometric authentication feature)
-│ └── deployment.yaml
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│   ├── login.js
+│   ├── webgui_test.js (added to test the webgui code)
+│   ├── biometric_authentication.js (added for the biometric authentication feature)
+│   └── deployment.yaml
 ├── k8s
-│ ├── cluster-config
-│ ├── istio-config
-│ ├── kustomization.yaml
-│ ├── cert-manager-config
-│ ├── monitoring_logging.yaml (added to monitor and log the k8s resources)
-│ └── security_config.yaml (added to configure security settings)
-└── helm-chart (added directory for the Helm chart)
-│ ├── Chart.yaml
-│ ├── values.yaml
-│ ├── templates
-│ │ ├── deployment.yaml
-│ │ ├── service.yaml
-│ │ └── ingress.yaml
-│ ├── charts
-│ ├── templates_test (added directory for testing templates)
-│ ├── Chart.lock
-└── infra
-├── terraform
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-│ ├── terraform.tfvars
-│ ├── security_config.tf (added to configure security settings)
-│ ├── autoscaling.tf (added to enable auto-scaling of resources)
-│ └── load_balancing.tf (added to enable load balancing of resources)
-├── ci_cd_pipeline (added a folder for the CI/CD pipeline)
-│ ├── .travis.yml (added for Travis CI)
-│ ├── Jenkinsfile (added for Jenkins pipeline)
-│ ├── Jenkinsfile.tests (added for testing pipeline)
-│ ├── Jenkinsfile.build (added for build pipeline)
-│ └── Jenkinsfile.deploy (added for deploy pipeline)
-└── data_processing
-├── data_format_converter.py (added to support additional bioinformatics data formats)
-├── data_manager.py (added to improve data management and analysis capabilities)
-└── data_analysis.py (added to improve data analysis capabilities)
+│   ├── cluster-config
+│   ├── istio-config
+│   ├── kustomization.yaml
+│   ├── cert-manager-config
+│   ├── monitoring_logging.yaml (added to monitor and log the k8s resources)
+│   ├── security_config.yaml (added to configure security settings)
+│   ├── attck_config.yaml (added to configure ATT&CK integration settings)
+│   └── d3fend_config.yaml (added to configure D3FEND integration settings)
+├── helm-chart (added directory for the Helm chart)
+│   ├── Chart.yaml
+│   ├── values.yaml
+│   ├── templates
+│   │   ├── deployment.yaml
+│   │   ├── service.yaml
+│   │   └── ingress.yaml
+│   ├── charts
+│   ├── templates_test (added directory for testing templates)
+│   └── Chart.lock
+├── infra
+│   ├── terraform
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   ├── terraform.tfvars
+│   │   ├── security_config.tf (added to configure security settings)
+│   │   ├── autoscaling.tf (added to enable auto-scaling of resources)
+│   │   ├── load_balancing.tf (added to enable load balancing of resources)
+│   │   ├── attck_config.tf (added to configure ATT&CK integration settings)
+│   │   └── d3fend_config.tf (added to configure D3FEND integration settings)
+│   ├── ci_cd_pipeline (added a folder for the CI/CD pipeline)
+│   │   ├── .travis.yml (added for Travis CI)
+│   │   ├── Jenkinsfile (added for Jenkins pipeline)
+│   │   ├── Jenkinsfile.tests (added for testing pipeline)
+│   │   ├── Jenkinsfile.build (added for build pipeline)
+│   │   └── Jenkinsfile.deploy (added for deploy pipeline)
+├── data_processing
+│   ├── data_format_converter.py (added to support additional bioinformatics data formats)
+│   ├── data_manager.py (added to improve data management and analysis capabilities)
+│   ├── data_analysis.py (added to improve data analysis capabilities)
+└── risk_management
+    ├── requirements.txt
+    ├── app.py
+    ├── config.py
+    ├── models.py
+    ├── routes.py
+    ├── templates
+    │   ├── base.html
+    │   ├── dashboard.html
+    │   ├── forms.html
+    │   ├── layout.html
+    │   └── login.html
+    ├── static
+    │   ├── css
+    │   │   ├── styles.css
+    │   │   └── forms.css
+    │   └── js
+    │       ├── scripts.js
+    │       └── forms.js
+    └── tests
+      ├── init.py
+      ├── conftest.py
+      ├── test_models.py
+      ├── test_routes.py
+      ├── test_forms.py
+      └── test_utils.py
 ```
